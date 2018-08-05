@@ -1,0 +1,13 @@
+#messages {
+    border: solid 1px black;
+    border-radius: 10px;
+    width: 80%;
+    height: 500px;
+}
+#messageBox {
+    width: 80%;
+    margin-bottom: 10px;
+}
+ul {
+    margin-bottom: 0px;
+}

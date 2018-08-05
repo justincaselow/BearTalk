@@ -1,0 +1,30 @@
+<html>
+    {% load static %}
+    <head>
+        <script src="{% static '/angular/angular.js' %}"></script>
+        <script src="{% static '/js/app.js' %}"></script>
+        <link rel="stylesheet" href="{% static '/bootstrap/dist/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static '/css/app.css' %}">
+    </head>
+    {% verbatim %}
+    <body>
+        <div class="container" ng-app="bearTalkApp" ng-controller="bearTalkController">
+            <h1>Welcome to DjangoChat</h1>
+            <div>
+                <span>my name is: <input class="form-control" ng-model="bearId"></span>
+                <form ng-submit="sendMessage()">
+                    <p>Enter message:</p>
+                    <input id="messageBox" class="form-control" type="text" ng-model="currentMsg"/>
+                </form>
+            </div>
+            <div>
+                <div id="messages">
+                    <ul ng-repeat="msg in messages">
+                        {{ msg.timestamp }} - {{ msg.bearId }} - {{ msg.message }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    {% endverbatim %}
+</html>
